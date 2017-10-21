@@ -1,0 +1,85 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+        xmlns:Card="nativescript-cardview"
+        xmlns:bottomBar="nativescript-bottom-navigation"
+        xmlns:Gradient="nativescript-gradient"
+        navigatingTo="onNavigatingTo" class="page" actionBarHidden="true"
+        loaded="pageLoaded">
+
+    <GridLayout rows="auto,*,auto">
+        <!-- Usuario -->
+        <GridLayout row="0" rows="auto,auto,auto">
+            <Gradient:Gradient direction="to bottom" colors="#2B308F, #225198, #1D609C" padding="10 15 0">
+                <Image row="0" src="~/images/foto_perfil.png" class="foto_perfil" />
+                <Label row="1" text="Hola David!" class="text_usuario" />
+                <Label row="2" text="Tu 0 km" class="text_km"/>
+            </Gradient:Gradient>
+        </GridLayout>
+        <!-- Datos -->
+        <GridLayout row="1" rows="auto,auto,*" backgroundColor="#D4D4D4">
+            <Label row="0" class="label_prueba" />
+            <Card:CardView margin="20" elevation="10" radius="10" padding="20" rowSpan="3">
+                <GridLayout rows="auto,auto,*,auto,auto">
+                    <!-- Cuotas licitadas -->
+                    <GridLayout row="0" rows="auto,auto,auto" margin="40 40 10">
+                        <Label row="0" text="CUOTAS LICITADAS" marginBottom="5" class="text_cuota"/>
+                        <Label row="1" class="progress_bar"/>
+                        <GridLayout row="1" columns="auto,*">
+                            <Gradient:Gradient col="0" direction="to right" 
+                                                colors="#1D609C, #225198, #2B308F" 
+                                                width="60%" height="10" borderRadius="7" >
+                                <Label text=""/>
+                            </Gradient:Gradient>
+                        </GridLayout>
+                        <Label row="2" text="64%" class="text_num" color="#1D609C"/>
+                    </GridLayout>
+                    <!-- Cuotas adelantadas -->
+                    <GridLayout row="1" rows="auto,auto,auto" margin="0 40">
+                        <Label row="0" text="CUOTAS ADELANTADAS" marginBottom="5" class="text_cuota"/>
+                        <Label row="1" class="progress_bar" />
+                        <GridLayout row="1" columns="auto,*">
+                            <Gradient:Gradient col="0" direction="to right" 
+                                                colors="#008CA7, #009A9F" 
+                                                width="30%" height="10" borderRadius="7" >
+                                <Label text="" />
+                            </Gradient:Gradient>
+                        </GridLayout>
+                        <Label row="2" text="25%" class="text_num" color="#009A9F"/>
+                    </GridLayout>
+                    <!-- Cuotas a vencer -->
+                    <GridLayout row="2" rows="*,auto,auto,auto,*" columns="*,auto,*" marginTop="20">
+                        <Image row="1" col="1" src="~/images/señal_advertencia.png" width="70" marginBottom="10"/>
+                        <Label row="2" col="1" text="CUOTAS A VENCER" class="text_cuota"/>
+                        <Label row="3" col="1" text="2" class="text_num_vencidas"/>
+                    </GridLayout>
+                    <!-- Redes sociales de la empresa -->
+                    <GridLayout row="3" columns="*,auto,auto,*" >
+                        <label col="0" text=""/>
+                        <Image col="1" src="~/images/facebook.png" tap="openFacebook" width="20" margin="5 2"/>
+                        <Image col="2" src="~/images/instagram.png" tap="openInstagram" width="20" margin="5 2"/>
+                        <label col="3" text="" />
+                    </GridLayout>
+                    <GridLayout row="4" columns="*,*,*" rows="auto" margin="0 10 10">
+                        <GridLayout row="0" col="0" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/whatsapp.png" col="0" row="0"/>
+                            <Label class="entry_text" text="+54 9 362 494-6892"  col="1"  row="0"/>
+                        </GridLayout>
+                        <GridLayout row="0" col="1" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/globe.png" col="0"  row="0"/>
+                            <Label class="entry_text" text="superplan.com.ar"  col="1"  row="0"/>
+                        </GridLayout>
+                        <GridLayout row="0" col="2" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/envelop.png" col="0" row="0"/>
+                            <Label class="entry_text" text="consultas@superplan.com.ar"  col="1" row="0"/>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </Card:CardView>
+        </GridLayout>
+        <!-- BottomBar -->
+        <bottomBar:BottomNavigation row="2" loaded="loaded" height="40">
+            <bottomBar:BottomNavigationTab icon="ic_home"></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab icon="ic_view_list" ></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab icon="ic_menu"></bottomBar:BottomNavigationTab>
+        </bottomBar:BottomNavigation>
+    </GridLayout>
+</Page>

@@ -1,0 +1,69 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+        xmlns:bottomBar="nativescript-bottom-navigation"
+        xmlns:Gradient="nativescript-gradient"
+        xmlns:gauge="nativescript-pro-ui/gauges"
+        navigatingTo="onNavigatingTo" class="page" actionBarHidden="true">
+    <!-- <Page.actionBar>
+        <ActionBar>
+            <GridLayout rows="auto">
+                <Gradient:Gradient direction="to right" colors="#FF0077, red, #FF00FF" row="0">
+                    <Label text="Such a fancy gradient :)" horizontalAlignment="center"/>
+                </Gradient:Gradient>
+            </GridLayout>
+        </ActionBar>
+    </Page.actionBar> -->
+    <!-- <GridLayout rows="auto,*"> -->
+        <!-- <StackLayout row="0" class="p-20">
+            <Label text="Tap the button" fontFamily="@fuentes/Vampire_Calligraphy.ttf"/>
+            <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
+            <Label text="{{ message }}" class="h2 text-center" textWrap="true"/>
+            <Button text="Cambiar de pagina" tap="cambio"/>
+        </StackLayout>
+        <bottomBar:BottomNavigation row="1" loaded="loaded">
+            <bottomBar:BottomNavigationTab title="First" icon="ic_home"></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab title="Second" icon="ic_view_list" ></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab title="Third" icon="ic_menu"></bottomBar:BottomNavigationTab>
+        </bottomBar:BottomNavigation>  -->
+    <GridLayout rows="400,*"> 
+        <gauge:RadRadialGauge id="gaugeView" margin="10" class="gauge" row="0">
+            <gauge:RadRadialGauge.scales>
+                <gauge:RadialScale startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.7">
+                    <gauge:RadialScale.scaleStyle>
+                        <gauge:ScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0" />
+                    </gauge:RadialScale.scaleStyle>
+                
+                    <gauge:RadialScale.indicators>
+                        <gauge:RadialBarIndicator minimum="0" maximum="100" location="0.5">
+                            <gauge:RadialBarIndicator.indicatorStyle>
+                                <gauge:BarIndicatorStyle fillColor="#40434C" barWidth="0.1"/>
+                            </gauge:RadialBarIndicator.indicatorStyle>
+                        </gauge:RadialBarIndicator>
+
+                        <gauge:RadialBarIndicator minimum="0" maximum="0" location="0.5" isAnimated="true">
+                            <gauge:RadialBarIndicator.indicatorStyle>
+                                <gauge:BarIndicatorStyle cap="Round" fillColor="#1D609C" barWidth="0.1"/>
+                            </gauge:RadialBarIndicator.indicatorStyle>
+                        </gauge:RadialBarIndicator>
+
+                        <gauge:RadialBarIndicator minimum="0" maximum="100" location="0.6">
+                            <gauge:RadialBarIndicator.indicatorStyle>
+                                <gauge:BarIndicatorStyle fillColor="#40434C" barWidth="0.1"/>
+                            </gauge:RadialBarIndicator.indicatorStyle>
+                        </gauge:RadialBarIndicator>
+
+                        <gauge:RadialBarIndicator minimum="0" maximum="0" location="0.6" isAnimated="true">
+                            <gauge:RadialBarIndicator.indicatorStyle>
+                                <gauge:BarIndicatorStyle cap="Round" fillColor="#E32E46" barWidth="0.1"/>
+                            </gauge:RadialBarIndicator.indicatorStyle>
+                        </gauge:RadialBarIndicator>
+
+                    </gauge:RadialScale.indicators>
+                    
+                </gauge:RadialScale>
+            </gauge:RadRadialGauge.scales>
+        </gauge:RadRadialGauge>
+    <!-- << gauges-indicators-add-bars-xml -->
+    </GridLayout>   
+    
+    
+</Page>

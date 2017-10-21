@@ -1,0 +1,75 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+        xmlns:Card="nativescript-cardview"
+        xmlns:bottomBar="nativescript-bottom-navigation"
+        xmlns:Gradient="nativescript-gradient"
+        navigatingTo="onNavigatingTo" class="page" actionBarHidden="true"
+        loaded="pageLoaded">
+
+    <GridLayout rows="auto,*,auto">
+        <!-- Usuario -->
+        <GridLayout row="0" rows="auto,auto,auto">
+            <Gradient:Gradient direction="to bottom" colors="#2B308F, #225198, #1D609C" padding="10 15 0">
+                <Image row="0" src="~/images/foto_perfil.png" class="foto_perfil" />
+                <Label row="1" text="Hola David!" class="text_usuario" />
+                <Label row="2" text="Tu 0 km" class="text_km"/>
+            </Gradient:Gradient>
+        </GridLayout>
+        <!-- Datos -->
+        <GridLayout row="1" rows="auto,auto,*" backgroundColor="#D4D4D4">
+            <Label row="0" class="label_prueba" />
+            <Card:CardView margin="20" elevation="10" radius="10" padding="20" rowSpan="3">
+                <GridLayout rows="auto,*,auto,auto,auto">
+                    <!-- Estado del usuario -->
+                    <GridLayout row="0" rows="auto" columns="*,auto,*" marginTop="10">
+                        <GridLayout row="0" col="1" rows="auto,auto,auto" columns="*,auto,7,auto,*">
+                            <Label row="0" col="1" text="Grupo" class="text_centrado" margin="5 0"/>
+                            <Label row="0" col="2" text="-" class="text_centrado" margin="5 0"/>
+                            <Label row="0" col="3" text="Orden" class="text_centrado" margin="5 0"/>
+                            <StackLayout row="1" colSpan="5" backgroundColor="black" height="1" width="150"/> <!-- Linea negra -->
+                            <Label row="2" colSpan="5" text="Estado" class="text_centrado" margin="5 0"/>
+                        </GridLayout>
+                        <Image row="0" col="2" src="~/images/volkswagen.png" class="logo_marca"/>
+                    </GridLayout>
+                    <!-- Auto -->
+                    <GridLayout row="1" rows="auto,auto,auto" columns="*,auto,*">
+                        <Image row="0" col="1" src="~/images/citroen_c4.jpg" width="60%"/>
+                        <Label row="1" col="1" text="Descripcion" class="text_centrado"/>
+                        <Label row="2" col="1" text="Cantidad de Puertas" class="text_centrado"/>
+                    </GridLayout>
+                    <!-- Mensaje -->
+                    <GridLayout row="2" rows="auto,auto" columns="*,auto,*" margin="20 0" class="presentacion">
+                        <Label row="0" col="1" text="Estas a 25 cuotas de ser" />
+                        <Label row="1" col="1" text="dueño de tu propio Okm!!" />
+                    </GridLayout>
+                    <!-- Redes sociales de la empresa -->
+                    <GridLayout row="3" columns="*,auto,auto,*" >
+                        <label col="0" text=""/>
+                        <Image col="1" src="~/images/facebook.png" tap="openFacebook" width="20" margin="5 2"/>
+                        <Image col="2" src="~/images/instagram.png" tap="openInstagram" width="20" margin="5 2"/>
+                        <label col="3" text="" />
+                    </GridLayout>
+                    <GridLayout row="4" columns="*,*,*" rows="auto" margin="0 10 10">
+                        <GridLayout row="0" col="0" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/whatsapp.png" col="0" row="0"/>
+                            <Label class="entry_text" text="+54 9 362 494-6892"  col="1"  row="0"/>
+                        </GridLayout>
+                        <GridLayout row="0" col="1" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/globe.png" col="0"  row="0"/>
+                            <Label class="entry_text" text="superplan.com.ar"  col="1"  row="0"/>
+                        </GridLayout>
+                        <GridLayout row="0" col="2" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/envelop.png" col="0" row="0"/>
+                            <Label class="entry_text" text="consultas@superplan.com.ar"  col="1" row="0"/>
+                        </GridLayout>
+                    </GridLayout> 
+                </GridLayout>
+            </Card:CardView>
+        </GridLayout>
+        <!-- BottomBar -->
+        <bottomBar:BottomNavigation row="2" loaded="loaded" height="40">
+            <bottomBar:BottomNavigationTab icon="ic_home"></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab icon="ic_view_list" ></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab icon="ic_menu"></bottomBar:BottomNavigationTab> 
+        </bottomBar:BottomNavigation>
+    </GridLayout>
+</Page>

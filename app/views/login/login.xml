@@ -1,0 +1,43 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+        xmlns:Card="nativescript-cardview"
+        xmlns:Gradient="nativescript-gradient"
+        xmlns:dd="nativescript-drop-down"
+        navigatingTo="onNavigatingTo" class="page" actionBarHidden="true"
+        loaded="pageLoaded">
+
+    <GridLayout rows="auto,auto">
+        <!-- Logo -->
+        <GridLayout row="0" rows="*,auto,*">
+            <Gradient:Gradient direction="to bottom" colors="#2C2F84,#29A7DE" padding="15 0 0">
+                <Image row="1" src="~/images/logo_superplan_blanco.png" class="logo_concesionaria" />
+            </Gradient:Gradient>
+        </GridLayout>
+        <!-- Datos -->
+        <GridLayout row="1" rows="auto,*,*">
+            <Label row="0" class="label_prueba"/>
+            <Label row="1" class="label_gris" />
+            <Label row="2" class="label_gris" />
+            <Card:CardView margin="10 20" elevation="5" radius="10" padding="20" rowSpan="2">
+                <GridLayout rows="*,auto,auto">
+                    <!-- Datos ingresados -->
+                    <GridLayout row="0" rows="auto,auto,auto,auto" class="datos_ingresados">
+                        <Label row="0" text="Grupo" margin="20 20 0" />
+                        <TextField row="1" autocorrect="false" autocapitalizationType="none" margin="0 20 0"/>
+                        <Label row="2" text="Orden" margin="20 20 0" />
+                        <TextField row="3" autocorrect="false" autocapitalizationType="none" margin="0 20 0"/>
+                    </GridLayout>
+                    <!-- Modelo del auto -->
+                    <!-- <dd:DropDown row="1" items="{{ marcas }}" selectedIndex="{{ marca }}" id="marcas_dropdown" class="dropdown_modelo"/> -->
+                    <!-- Ingresar -->
+                    <GridLayout row="2" columns="*,auto,*">
+                        <Card:CardView col="1" margin="70 0 30" radius="30">
+                            <Gradient:Gradient direction="to right" colors="#2B308F, #225198, #1D609C">
+                                <Label text="Ingresar" class="button_descarga"/>
+                            </Gradient:Gradient>
+                        </Card:CardView> 
+                    </GridLayout>
+                </GridLayout>
+            </Card:CardView>
+        </GridLayout>
+    </GridLayout>
+</Page>

@@ -1,0 +1,26 @@
+.label_prueba{
+    background-color: #29A7DE; 
+}
+
+.label_gris{
+    background-color: #D4D4D4;
+    height: 300;
+}
+
+.datos_ingresados{
+    font-size: 15;
+}
+
+.button_descarga{
+    color: white;
+    font-size: 15;
+    padding: 5;
+    width: 100;
+    text-align: center;
+}
+
+.logo_concesionaria{
+    width: 40%;
+    margin: 20;
+}
+

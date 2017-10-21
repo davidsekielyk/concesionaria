@@ -1,0 +1,116 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+        xmlns:Card="nativescript-cardview"
+        xmlns:bottomBar="nativescript-bottom-navigation"
+        xmlns:Gradient="nativescript-gradient"
+        xmlns:gauge="nativescript-pro-ui/gauges"
+        navigatingTo="onNavigatingTo" class="page" actionBarHidden="true"
+        loaded="pageLoaded">
+
+    <GridLayout rows="auto,*,auto">
+        <!-- Usuario -->
+        <GridLayout row="0" rows="auto,auto,auto">
+            <Gradient:Gradient direction="to bottom" colors="#2B308F, #225198, #1D609C" padding="10 15 0">
+                <Image row="0" src="~/images/foto_perfil.png" class="foto_perfil" />
+                <Label row="1" text="Hola David!" class="text_usuario" />
+                <Label row="2" text="Tu 0 km" class="text_km"/>
+            </Gradient:Gradient>
+        </GridLayout>
+        <!-- Datos -->
+        <GridLayout row="1" rows="auto,auto,*" backgroundColor="#D4D4D4">
+            <Label row="0" class="label_prueba" />
+            <Card:CardView margin="20" elevation="10" radius="10" padding="20" rowSpan="3">
+                <GridLayout rows="*,auto,auto,auto,auto">
+                    <!-- Gauge -->
+                    <gauge:RadRadialGauge id="gaugeView" class="gauge" row="0">
+                        <gauge:RadRadialGauge.scales>
+                            <gauge:RadialScale startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.9">
+                                <gauge:RadialScale.scaleStyle>
+                                    <gauge:ScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0" />
+                                </gauge:RadialScale.scaleStyle>
+                            
+                                <gauge:RadialScale.indicators>
+                                    <gauge:RadialBarIndicator minimum="0" maximum="100" location="0.7">
+                                        <gauge:RadialBarIndicator.indicatorStyle>
+                                            <gauge:BarIndicatorStyle fillColor="#40434C" barWidth="0.1"/>
+                                        </gauge:RadialBarIndicator.indicatorStyle>
+                                    </gauge:RadialBarIndicator>
+
+                                    <gauge:RadialBarIndicator minimum="0" maximum="0" location="0.7" isAnimated="true">
+                                        <gauge:RadialBarIndicator.indicatorStyle>
+                                            <gauge:BarIndicatorStyle cap="Round" fillColor="#1D609C" barWidth="0.1"/>
+                                        </gauge:RadialBarIndicator.indicatorStyle>
+                                    </gauge:RadialBarIndicator>
+
+                                    <gauge:RadialBarIndicator minimum="0" maximum="100" location="0.8">
+                                        <gauge:RadialBarIndicator.indicatorStyle>
+                                            <gauge:BarIndicatorStyle fillColor="#40434C" barWidth="0.1"/>
+                                        </gauge:RadialBarIndicator.indicatorStyle>
+                                    </gauge:RadialBarIndicator>
+
+                                    <gauge:RadialBarIndicator minimum="0" maximum="0" location="0.8" isAnimated="true">
+                                        <gauge:RadialBarIndicator.indicatorStyle>
+                                            <gauge:BarIndicatorStyle cap="Round" fillColor="#E32E46" barWidth="0.1"/>
+                                        </gauge:RadialBarIndicator.indicatorStyle>
+                                    </gauge:RadialBarIndicator>
+
+                                </gauge:RadialScale.indicators>
+                                
+                            </gauge:RadialScale>
+                        </gauge:RadRadialGauge.scales>
+                    </gauge:RadRadialGauge>
+                    <GridLayout row="0" rows="*,auto,auto,*" columns="*,*,*">
+                        <Label row="1" col="1" text="55,00%" class="num_porcentaje"/>
+                        <Label row="2" col="1" text="CUOTAS PAGADAS" class="text_porcentaje"/>
+                    </GridLayout>
+                    <!-- Cuotas -->
+                    <GridLayout row="1" rows="auto,auto" columns="*,*,*" margin="10 0">
+                        <!-- Impagas -->
+                        <Label row="0" col="0" text="CUOTAS IMPAGAS" class="text_cuotas"/>
+                        <Label row="1" col="0" text="24" class="text_num_cuotas" color="#175E79"/>
+                        <!-- Emitidas -->
+                        <Label row="0" col="1" text="CUOTAS EMITIDAS" class="text_cuotas"/>
+                        <Label row="1" col="1" text="84" class="text_num_cuotas" color="#0095A1"/>
+                        <!-- Pagadas -->
+                        <Label row="0" col="2" text="CUOTAS PAGADAS" class="text_cuotas"/>
+                        <Label row="1" col="2" text="65" class="text_num_cuotas" color="#E32E46"/>
+                    </GridLayout>
+                    <!-- Descarga -->
+                    <GridLayout row="2" columns="*,auto,*">
+                        <Card:CardView col="1" margin="10" radius="35">
+                            <Gradient:Gradient direction="to right" colors="#2B308F, #225198, #1D609C">
+                                <Label text="Descarga de Cuotas" class="button_descarga"/>
+                            </Gradient:Gradient>
+                        </Card:CardView> 
+                    </GridLayout> 
+                    <!-- Redes sociales de la empresa -->
+                    <GridLayout row="3" columns="*,auto,auto,*" >
+                        <label col="0" text=""/>
+                        <Image col="1" src="~/images/facebook.png" tap="openFacebook" width="20" margin="5 2"/>
+                        <Image col="2" src="~/images/instagram.png" tap="openInstagram" width="20" margin="5 2"/>
+                        <label col="3" text="" />
+                    </GridLayout>
+                    <GridLayout row="4" columns="*,*,*" rows="auto" margin="0 10 10">
+                        <GridLayout row="0" col="0" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/whatsapp.png" col="0" row="0"/>
+                            <Label class="entry_text" text="+54 9 362 494-6892"  col="1"  row="0"/>
+                        </GridLayout>
+                        <GridLayout row="0" col="1" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/globe.png" col="0"  row="0"/>
+                            <Label class="entry_text" text="superplan.com.ar"  col="1"  row="0"/>
+                        </GridLayout>
+                        <GridLayout row="0" col="2" rows="auto" columns="auto,*">
+                            <Image class="entry_icon" src="~/images/envelop.png" col="0" row="0"/>
+                            <Label class="entry_text" text="consultas@superplan.com.ar"  col="1" row="0"/>
+                        </GridLayout>
+                    </GridLayout> 
+                </GridLayout>
+            </Card:CardView>
+        </GridLayout>
+        <!-- BottomBar -->
+        <bottomBar:BottomNavigation row="2" loaded="loaded" height="40">
+            <bottomBar:BottomNavigationTab icon="ic_home"></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab icon="ic_view_list" ></bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab icon="ic_menu"></bottomBar:BottomNavigationTab>
+        </bottomBar:BottomNavigation>
+    </GridLayout>
+</Page>
